@@ -12,7 +12,7 @@ This is my code repository for the Course [TensorFlow Developer Certificate in 2
 - Using @tf.function (a way to speed up your regular Python functions)
 - Using GPUs with TensorFlow
 
-## 1 — Neural Network Regression with TensorFlow
+## 1 — [Neural Network Regression with TensorFlow](https://is.gd/Z5C7xc)
 
 - Architecture of a regression model
 - Input shapes and output shapes
