@@ -33,7 +33,7 @@ This is my code repository for the Course [TensorFlow Developer Certificate in 2
 - Saving a model (so we can use it later)
 - Loading a model
 
-## 1 — [Neural Network Classification with TensorFlow](https://tinyurl.com/2h7686m4)
+## 2 — [Neural Network Classification with TensorFlow](https://tinyurl.com/2h7686m4)
 
 - Architecture of a classification model
 - Input shapes and output shapes
