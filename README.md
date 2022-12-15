@@ -55,3 +55,19 @@ This is my code repository for the Course [TensorFlow Developer Certificate in 2
   - Visualizng the model ("visualize, visualize, visualize")
   - Looking at training curves
   - Compare predictions to ground truth (using our evaluation metrics)
+
+## 3 — [Computer Vision with TensorFlow](https://tinyurl.com/2z3n8dmv)
+
+- Getting a dataset to work with
+- Architecture of a convolutional neural network
+- A quick end-to-end example (what we're working towards)
+- Steps in modelling for binary image classification with CNNs
+  - Becoming one with the data
+  - Preparing data for modelling
+  - Creating a CNN model (starting with a baseline)
+  - Fitting a model (getting it to find patterns in our data)
+  - Evaluating a model
+  - Improving a model
+  - Making a prediction with a trained model
+- Steps in modelling for multi-class image classification with CNNs
+  - Same as above (but this time with a different dataset)
