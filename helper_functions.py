@@ -101,7 +101,7 @@ def pred_and_plot(model, filename, class_names):
     pred = model.predict(tf.expand_dims(img, axis=0))
     # Obtener la clase predicha
     if len(class_names)> 2:
-        pred_class = class_names[tf.argmax(pred)] # Categorical prediction
+        pred_class = class_names[np.argmax(pred)] # Categorical prediction
     else:
         pred_class = class_names[int(tf.round(pred))] # Binary prediction
     # Cargar la imagen
