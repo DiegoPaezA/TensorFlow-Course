@@ -46,6 +46,7 @@ def view_random_image(target_dir, target_class):
     View a random image from a target directory.
     input: target_dir = target directory (e.g. train_dir or test_dir)
            target_class = target class (e.g. "PNEUMONIA" or "NORMAL")
+    output: displays a random image and prints the image shape
     """
     # Set the target directory (we'll view images from here)
     target_folder = target_dir + target_class
@@ -71,6 +72,7 @@ def load_and_prep_image(filename, img_shape=224):
     Reads an image from filename, turns it into a tensor and reshapes it to (img_shape, img_shape, color_channels).
     input: filename = path to the image
             img_shape = desired size of the image (default = 224)
+    output: preprocessed image tensor
     """
     # Leer la imagen
     img = tf.io.read_file(filename)
@@ -91,6 +93,7 @@ def pred_and_plot(model, filename, class_names):
     input: model = a trained machine learning model
             filename = path to the image
             class_names = a list of class names (e.g. ['cat', 'dog'])
+    output: displays an image with the predicted class as the title
     """
     # Preprocesar la imagen
     img = load_and_prep_image(filename)
