@@ -71,3 +71,11 @@ This is my code repository for the Course [TensorFlow Developer Certificate in 2
   - Making a prediction with a trained model
 - Steps in modelling for multi-class image classification with CNNs
   - Same as above (but this time with a different dataset)
+
+## 4 — [Transfer Learning with TensorFlow](https://tinyurl.com/2egqg77w)
+
+- Introduce transfer learning (a way to beat all of our old self-built models)
+- Using a smaller dataset to experiment faster (10% of training samples of 10 classes of food)
+- Build a transfer learning feature extraction model using TensorFlow Hub
+- Introduce the TensorBoard callback to track model training results
+- Compare model results using TensorBoard.
