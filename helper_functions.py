@@ -14,14 +14,25 @@ Función para graficar las curvas de entrenamiento
 """
 def plot_training_curves(history):
     """
-    Plot training curves for accuracy and loss
-    - input: history object from model.fit()
-    - output: plot of training curves
+    Plot training curves for accuracy and loss metrics.
+    Args: 
+        history object from model.fit()
+    Returns: 
+        Plot of training/validation loss and accuracy curves
+
+
     """
     # Plot training & validation accuracy values
+
+    loss = history.history['loss']
+    val_loss = history.history['val_loss']
+    acc = history.history['accuracy']
+    val_acc = history.history['val_accuracy']
+    
+
     plt.subplot(2, 1, 1)
-    plt.plot(history.history['accuracy'])
-    plt.plot(history.history['val_accuracy'])
+    plt.plot(acc)
+    plt.plot(val_acc)
     plt.title('Model Training Curves')
     plt.ylabel('Accuracy')
     #plt.xlabel('Epoch')
@@ -29,11 +40,11 @@ def plot_training_curves(history):
     plt.grid(True)
     # Plot training & validation loss values
     plt.subplot(2, 1, 2)
-    plt.plot(history.history['loss'])
-    plt.plot(history.history['val_loss'])
+    plt.plot(loss)
+    plt.plot(val_loss)
     #plt.title('Model loss')
     plt.ylabel('Loss')
-    plt.xlabel('Epoch')
+    plt.xlabel('Epochs')
     plt.legend(['Train', 'Val'], loc='upper right')
     plt.grid(True)
     plt.show()
