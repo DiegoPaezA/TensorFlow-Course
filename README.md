@@ -72,10 +72,27 @@ This is my code repository for the Course [TensorFlow Developer Certificate in 2
 - Steps in modelling for multi-class image classification with CNNs
   - Same as above (but this time with a different dataset)
 
-## 4 — [Transfer Learning with TensorFlow](https://tinyurl.com/2egqg77w)
+## 4 — Transfer Learning with TensorFlow
+
+Part 1: [Feature extraction transfer learning](https://tinyurl.com/2egqg77w)
 
 - Introduce transfer learning (a way to beat all of our old self-built models)
 - Using a smaller dataset to experiment faster (10% of training samples of 10 classes of food)
 - Build a transfer learning feature extraction model using TensorFlow Hub
 - Introduce the TensorBoard callback to track model training results
 - Compare model results using TensorBoard.
+
+Part 2: [Fine-tuning transfer learning](https://tinyurl.com/2g8ohpsx)
+
+- Introduce fine-tuning, a type of transfer learning to modify a pre-trained model to be more suited to your data
+- Using the Keras Functional API (a differnt way to build models in Keras)
+- Using a smaller dataset to experiment faster (e.g. 1-10% of training samples of 10 classes of food)
+- Data augmentation (how to make your training dataset more diverse without adding more data)
+- Running a series of modelling experiments on our Food Vision data
+  - Model 0: a transfer learning model using the Keras Functional API
+  - Model 1: a feature extraction transfer learning model on 1% of the data with data augmentation
+  - Model 2: a feature extraction transfer learning model on 10% of the data with data augmentation
+  - Model 3: a fine-tuned transfer learning model on 10% of the data
+  - Model 4: a fine-tuned transfer learning model on 100% of the data
+- Introduce the ModelCheckpoint callback to save intermediate training results
+- Compare model experiments results using TensorBoard
