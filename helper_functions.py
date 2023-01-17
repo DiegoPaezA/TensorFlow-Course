@@ -1,5 +1,14 @@
 """
 Script creado para almacenar funciones que se usan en varios notebooks
+Las funciones son:
+- plot_training_curves: para graficar las curvas de entrenamiento
+- compare_historys: graficar curvas de entrenamiento al aplicar Fine-Tuning
+- view_random_image: para visualizar una imagen aleatoria
+- load_and_prep_image: para cargar y preparar una imagen para hacer una predicción
+- pred_and_plot: para hacer una predicción y graficar la imagen
+- create_tensorboard_callback: para crear un callback para TensorBoard
+- compare_historys: para comparar las curvas de entrenamiento de dos modelos
+- walk_through_dir: para visualizar las imágenes de un directorio
 """
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -48,6 +57,55 @@ def plot_training_curves(history):
     plt.ylabel('Loss')
     plt.xlabel('Epochs')
     plt.legend(['Train', 'Val'], loc='upper right')
+    plt.grid(True)
+    plt.show()
+
+""""
+Función para graficar las curvas de entrenamiento al aplicar Fine-Tuning
+"""
+def compare_historys(original_history, new_history, initial_epochs = 5):
+    """
+    Compare two TensorFlow History objects.
+    Inputs:
+        original_history: history object from model.fit() with Feature Extraction
+        new_history: new history object from model.fit() with Fine-Tuning
+        initial_epochs = default 5
+    Outputs:
+        Plot of training/validation loss and accuracy curves
+    """
+    # Get original history measurements
+    loss = original_history.history['loss']
+    val_loss = original_history.history['val_loss']
+
+    acc = original_history.history['accuracy']
+    val_acc = original_history.history['val_accuracy']
+
+    # Combine original history
+    total_acc = acc + new_history.history['accuracy']
+    total_loss = loss + new_history.history['loss']
+
+    total_val_acc = val_acc + new_history.history['val_accuracy']
+    total_val_loss = val_loss + new_history.history['val_loss']
+
+    # Plot training & validation Accuracy values
+    plt.subplot(2, 1, 1)
+    plt.plot(total_acc, label = "Train")
+    plt.plot(total_val_acc, label = "Val")
+    plt.plot([initial_epochs-1, initial_epochs-1], plt.ylim(), label="Start Fine Tuning")
+    plt.title('Model Training Curves')
+    plt.ylabel('Accuracy')
+    plt.legend(loc='lower right')
+    plt.grid(True)
+
+    # Plot training & validation loss values
+    plt.subplot(2, 1, 2)
+    plt.plot(total_loss, label = "Train")
+    plt.plot(total_val_loss, label = "Val")
+    
+    plt.plot([initial_epochs-1, initial_epochs-1], plt.ylim(), label="Start Fine Tuning")
+    plt.ylabel('Loss')
+    plt.xlabel('Epochs')
+    plt.legend(loc='upper right')
     plt.grid(True)
     plt.show()
 
