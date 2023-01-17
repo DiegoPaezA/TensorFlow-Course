@@ -7,9 +7,9 @@ Las funciones son:
 - load_and_prep_image: para cargar y preparar una imagen para hacer una predicción
 - pred_and_plot: para hacer una predicción y graficar la imagen
 - create_tensorboard_callback: para crear un callback para TensorBoard
-- compare_historys: para comparar las curvas de entrenamiento de dos modelos
 - walk_through_dir: para visualizar las imágenes de un directorio
 """
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import random
@@ -40,7 +40,6 @@ def plot_training_curves(history):
     acc = history.history['accuracy']
     val_acc = history.history['val_accuracy']
     
-
     plt.subplot(2, 1, 1)
     plt.plot(acc)
     plt.plot(val_acc)
@@ -222,50 +221,3 @@ def walk_through_dir(dir_path):
   """
   for dirpath, dirnames, filenames in os.walk(dir_path):
     print(f"There are {len(dirnames)} directories and {len(filenames)} images in '{dirpath}'.")
-
-"""
-Función para comparar dos objetos History de TensorFlow
-"""
-def compare_historys(original_history, new_history, initial_epochs=5):
-    """
-    Compares two TensorFlow model History objects.
-    
-    Args:
-      original_history: History object from original model (before new_history)
-      new_history: History object from continued model training (after original_history)
-      initial_epochs: Number of epochs in original_history (new_history plot starts from here) 
-    """
-    
-    # Get original history measurements
-    acc = original_history.history["accuracy"]
-    loss = original_history.history["loss"]
-
-    val_acc = original_history.history["val_accuracy"]
-    val_loss = original_history.history["val_loss"]
-
-    # Combine original history with new history
-    total_acc = acc + new_history.history["accuracy"]
-    total_loss = loss + new_history.history["loss"]
-
-    total_val_acc = val_acc + new_history.history["val_accuracy"]
-    total_val_loss = val_loss + new_history.history["val_loss"]
-
-    # Make plots
-    plt.figure(figsize=(8, 8))
-    plt.subplot(2, 1, 1)
-    plt.plot(total_acc, label='Training Accuracy')
-    plt.plot(total_val_acc, label='Validation Accuracy')
-    plt.plot([initial_epochs-1, initial_epochs-1],
-              plt.ylim(), label='Start Fine Tuning') # reshift plot around epochs
-    plt.legend(loc='lower right')
-    plt.title('Training and Validation Accuracy')
-
-    plt.subplot(2, 1, 2)
-    plt.plot(total_loss, label='Training Loss')
-    plt.plot(total_val_loss, label='Validation Loss')
-    plt.plot([initial_epochs-1, initial_epochs-1],
-              plt.ylim(), label='Start Fine Tuning') # reshift plot around epochs
-    plt.legend(loc='upper right')
-    plt.title('Training and Validation Loss')
-    plt.xlabel('epoch')
-    plt.show()
