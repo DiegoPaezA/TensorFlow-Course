@@ -96,3 +96,13 @@ Part 2: [Fine-tuning transfer learning](https://tinyurl.com/2g8ohpsx)
   - Model 4: a fine-tuned transfer learning model on 100% of the data
 - Introduce the ModelCheckpoint callback to save intermediate training results
 - Compare model experiments results using TensorBoard
+
+Part 3: [Scaling-Up Transfer learning](https://tinyurl.com/2huraxmc)
+
+- Downloading and preparing 10% of the Food101 data (10% of training data)
+- Training a feature extraction transfer learning model on 10% of the Food101 training data
+- Fine-tuning our feature extraction model
+- Saving and loaded our trained model
+- Evaluating the performance of our Food Vision model trained on 10% of the training data
+  - Finding our model's most wrong predictions
+- Making predictions with our Food Vision model on custom images of food
