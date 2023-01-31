@@ -106,3 +106,5 @@ Part 3: [Scaling-Up Transfer learning](https://tinyurl.com/2huraxmc)
 - Evaluating the performance of our Food Vision model trained on 10% of the training data
   - Finding our model's most wrong predictions
 - Making predictions with our Food Vision model on custom images of food
+
+## 5 — [Milestone Project 1: 🍔👁 Food Vision Big](https://tinyurl.com/2cngu5n9)
