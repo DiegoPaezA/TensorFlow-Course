@@ -108,3 +108,12 @@ Part 3: [Scaling-Up Transfer learning](https://tinyurl.com/2huraxmc)
 - Making predictions with our Food Vision model on custom images of food
 
 ## 5 — [Milestone Project 1: 🍔👁 Food Vision Big](https://tinyurl.com/2cngu5n9)
+
+- Using TensorFlow Datasets to download and explore data
+- Creating preprocessing function for our data
+- Batching & preparing datasets for modelling (making our datasets run fast)
+- Creating modelling callbacks
+- Setting up mixed precision training
+- Building a feature extraction model (see transfer learning part 1: feature extraction)
+- Fine-tuning the feature extraction model (see transfer learning part 2: fine-tuning)
+- Viewing training results on TensorBoard
