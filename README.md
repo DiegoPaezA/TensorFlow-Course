@@ -117,3 +117,18 @@ Part 3: [Scaling-Up Transfer learning](https://tinyurl.com/2huraxmc)
 - Building a feature extraction model (see transfer learning part 1: feature extraction)
 - Fine-tuning the feature extraction model (see transfer learning part 2: fine-tuning)
 - Viewing training results on TensorBoard
+
+## 5 — [Natural Language Processing with TensorFlow](https://tinyurl.com/2khrsfbc)
+
+- Downloading a text dataset
+- Visualizing text data
+- Converting text into numbers using tokenization
+- Turning our tokenized text into an embedding
+- Modelling a text dataset
+  - Starting with a baseline (TF-IDF)
+  - Building several deep learning text models
+    - Dense, LSTM, GRU, Conv1D, Transfer learning
+- Comparing the performance of each our models
+- Combining our models into an ensemble
+- Saving and loading a trained model
+- Find the most wrong predictions
