@@ -1,5 +1,6 @@
 """
 Script creado para almacenar funciones que se usan en varios notebooks
+
 Las funciones son:
 - plot_training_curves: para graficar las curvas de entrenamiento
 - compare_historys: graficar curvas de entrenamiento al aplicar Fine-Tuning
