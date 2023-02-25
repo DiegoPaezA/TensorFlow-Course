@@ -118,7 +118,7 @@ Part 3: [Scaling-Up Transfer learning](https://tinyurl.com/2huraxmc)
 - Fine-tuning the feature extraction model (see transfer learning part 2: fine-tuning)
 - Viewing training results on TensorBoard
 
-## 6 — [Natural Language Processing with TensorFlow](https://tinyurl.com/2khrsfbc)
+## 6 — [Natural Language Processing with TensorFlow](https://tinyurl.com/2znn9p8o)
 
 - Downloading a text dataset
 - Visualizing text data
