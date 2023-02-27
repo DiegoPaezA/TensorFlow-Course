@@ -12,6 +12,7 @@ Las funciones son:
 - Función para descomprimir un dataset
 - Función para calcular el resultado del desempeño de un modelo
 - Función para graficar la matrix de confusión
+- Función Para comparar dos modelos
 """
 
 import matplotlib.pyplot as plt
@@ -352,3 +353,20 @@ def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_s
   # Save the figure to the current working directory
   if savefig:
     fig.savefig("confusion_matrix.png")
+    
+"""
+Función para comparar el resultado de dos modelos
+"""
+# Create a helper function to compare our baseline results to new model results
+def compare_baseline_to_new_results(baseline_results, new_model_results):
+  """
+  Compares two different model results.
+  
+  Args:
+    baseline_results: a dictionary of baseline model results.
+    new_model_results: a dictionary of new model results.
+  returns:
+    Prints out each model metric and the difference between the baseline and new model.
+  """
+  for key, value in baseline_results.items():
+    print(f"Baseline {key}: {value:.2f}, New {key}: {new_model_results[key]:.2f}, Difference: {new_model_results[key]-value:.2f}")    
